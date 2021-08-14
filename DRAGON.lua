@@ -1471,7 +1471,7 @@ if text == 'الاصدار' and DevSoFi(msg) then
 database:del(bot_id..'Srt:Bot') 
 send(msg.chat_id_, msg.id_,' ☽ اصدار سورس صعيدي{ 3x☆}')
 end
-if text == 'مـبــرمـج السـورس'  then
+if text == 'مبرمج السورس'  then
 database:del(bot_id..'Srt:Bot') 
 local Text = [[ 
 [أهـلا بـك في تـواصل جـابـوا](t.me/J_a_b_w_a_bot)
@@ -1485,7 +1485,7 @@ https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. ms
 end
 if text == '╭──── ● «✯SAIDI✯» ● ────╮' then
 local Text = [[ 
-جروب يوزرات مطورين ومبرمجين السورس 𖣘 
+جروب يوزرات مطورين ومبرمجين السورس
 محتاج تنصب بوت تواصل معان ↓↓↓
 ]]
 keyboard = {}  
@@ -1559,8 +1559,21 @@ end
 if text == 'ماديسون مبرمج السورس' and DevSoFi(msg) then
 database:del(bot_id..'Srt:Bot') 
 local Text = [[ 
-- للتواصل مع ماديسون مبرمج السورس اتبع الازرار ♡
-اتبع الزر إلى تحت ⩹━━━⊶❲«✯SAIDI✯»❳⊷━━━⩺↜
+للتواصل مع ماديسون مبرمج السورس اتبع الازرار  ↓↓↓
+اتبع الزر إلى تحت ⩹━━━⊶❲«✯SAIDI✯»❳⊷━━━⩺
+]] 
+keyboard = {}  
+keyboard.inline_keyboard = { 
+{{text = '☾ 𝙼𝙰𝙳𝙸𝚂𝙾𝙽 ☽', url="t.me/AAHMEED11"}}, 
+} 
+local msg_id = msg.id_/2097152/0.5 
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+end
+if text == 'جابوا مبرمج الصعيدي' and DevSoFi(msg) then
+database:del(bot_id..'Srt:Bot') 
+local Text = [[ 
+للتواصل مع المبرمج جابوا اتبع الازرار بالاسفل  ↓↓↓
+اتبع الزر إلى تحت ⩹━━━⊶❲«✯SAIDI✯»❳⊷━━━⩺
 ]] 
 keyboard = {}  
 keyboard.inline_keyboard = { 
@@ -2101,7 +2114,7 @@ keyboard.inline_keyboard = {
 {text = 'الـمـطـور', url="http://t.me/"..sudos.UserName},
 },
 {
-{text = 'اضف البوت الي مجموعتك 𖠕', url = "https://t.me/"..data.username_.."?startgroup=new"},
+{text = 'أضغط لاضافه ألبوت لمجموعتك 𖠪', url = "https://t.me/"..data.username_.."?startgroup=new"},
 }
 }
 local msg_id = msg.id_/2097152/0.5
@@ -2763,17 +2776,17 @@ local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
 send(msg.chat_id_, msg.id_,'['..textchuser..']')
 else
-send(msg.chat_id_, msg.id_,' ☽لا تستطيع استخدام البوت \n ☽ يرجى الاشتراك بالقناه اولا \n ☽ اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
+send(msg.chat_id_, msg.id_,' ☽ لا تستطيع استخدام البوت \n ☽ يرجى الاشتراك بالقناه اولا \n ☽ اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
 end
 return false
 end
 if msg.can_be_deleted_ == false then 
-send(msg.chat_id_, msg.id_,' ☽عذرا يرجى ترقيه البوت مشرف !')
+send(msg.chat_id_, msg.id_,' ☽ عذرا يرجى ترقيه البوت مشرف !')
 return false  
 end
 tdcli_function ({ ID = "GetChannelFull", channel_id_ = getChatId(msg.chat_id_).ID }, function(arg,data)  
 if tonumber(data.member_count_) < tonumber(database:get(bot_id..'Num:Add:Bot') or 0) and not DevSoFi(msg) then
-send(msg.chat_id_, msg.id_,' ☽عدد اعضاء الجروب قليله يرجى جمع >> {'..(database:get(bot_id..'Num:Add:Bot') or 0)..'} عضو')
+send(msg.chat_id_, msg.id_,' ☽ عدد اعضاء الجروب قليله يرجى جمع >> {'..(database:get(bot_id..'Num:Add:Bot') or 0)..'} عضو')
 return false
 end
 tdcli_function ({ID = "GetUser",user_id_ = msg.sender_user_id_},function(extra,result,success)
@@ -2813,7 +2826,7 @@ local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
 send(msg.chat_id_, msg.id_,'['..textchuser..']')
 else
-send(msg.chat_id_, msg.id_,' ☽لا تستطيع استخدام البوت \n ☽ يرجى الاشتراك بالقناه اولا \n ☽ اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
+send(msg.chat_id_, msg.id_,' ☽ لا تستطيع استخدام البوت \n ☽ يرجى الاشتراك بالقناه اولا \n ☽ اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
 end
 return false
 end
@@ -3314,7 +3327,7 @@ local Text = [[
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '☾ 𝙼𝙰𝙳𝙸𝚂𝙾𝙽 ☽',url="t.me/AAHMEED11"}},
+{{text = '𖣘 𝙼𝙰𝙳𝙸𝚂𝙾𝙽 𖣘',url="t.me/AAHMEED11"}},
 {{text = '𖣘 𝙹𝙰𝙱𝚆𝙰 𖣘',url="t.me/J_A_B_W_A"},{text = '𖣘 𝚃𝙰𝙷𝙰 𝙾𝚂𝙺𝙰𝚁 𖣘', url="t.me/xxx_ksomk_xxx"}},
 {{text = '𖣘 𝚃𝙾 𝙰𝚂𝙺 𖣘',url="t.me/J_a_b_w_a_bot"}}, 
 {{text = '𖣘 𝚂𝙾𝚄𝚁𝙲𝙴 𝚂𝙰𝙸𝙳𝙸 𖣘 ', url="t.me/Sadauam"}},
@@ -3352,7 +3365,7 @@ local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/Xxx_ksomk_xxX&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
 
-if text == 'جابوا'  then
+if text == 'جابوا'  or text == 'المبرمج جابوا' then
 local Text = [[
 جابوا مبرمج السورس لو حابب تتواصل معاه
 اتبع الزر إلى تحت 𖠪
@@ -3366,7 +3379,7 @@ local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/J_A_B_W_A&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
 
-if text == 'مـبــرمـج السـورس'  then
+if text == 'مبرمج السورس'  then
 local Text = [[
 جابوا مبرمج السورس لو حابب تتواصل معاه
 اتبع الزر إلى تحت ↓↓↓
@@ -4382,12 +4395,12 @@ end
 end 
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, start_function, nil) 
 end
-if text == '𖣘 𝚂𝙾𝚄𝚁𝙲𝙴 𝚂𝙰𝙸??𝙸 𖣘' then
+if text == '𖣘 𝚂𝙾𝚄𝚁𝙲𝙴 𝚂𝙰𝙸𝙳𝙸 𖣘' then
 local Text = [[ 
- من أحسن السورسات على التليجرام سورس صعيدي 
-حمايه.سرعه.دقه وامان
+من أحسن السورسات على التليجرام سورس صعيدي 
+حمايه⤌ سرعه⤌دقه⤌ أمان
  قناه السورس ↓↓↓
-  [𝒘𝒆𝒍𝒄𝒐𝒎𝒆 𝒕𝒐 𝒔𝒐𝒖𝒓𝒄𝒆 Saidi ](http://t.me/Sadauam)
+  [𝚆𝙴𝙻𝙲𝙾𝙼𝙴 𝚃𝙾 𝚂𝙾𝚄𝚁𝙲𝙴 𝚂𝙰𝙸𝙳𝙰 ](http://t.me/Sadauam)
 ]]
 keyboard = {}  
 keyboard.inline_keyboard = { 
@@ -4436,7 +4449,7 @@ keyboard.inline_keyboard = {
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&Photo=https://t.me/J_A_B_W_A&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
-if text == 'مـبــرمـج السـورس'  then
+if text == 'مبرمج السورس'  then
 database:del(bot_id..'Srt:Bot') 
 local Text = [[ 
 [أهـلا بـك في تـواصل جـابـوا](t.me/J_a_b_w_a_bot)
@@ -13078,6 +13091,7 @@ keyboard = {}
 keyboard.inline_keyboard = { 
 {{text = 'ghost.',url="t.me/G500t"}}, 
 {{text = 'Alamy.',url="t.me/j333x"}}, 
+{{text = '𖣘 𝚂𝙾𝚄𝚁𝙲𝙴 𝚂𝙰𝙸𝙳𝙸 𖣘', url="t.me/Sadauam"}},
 } 
 local msg_id = msg.id_/2097152/0.5 
 https.request("https://api.telegram.org/bot"..token..'/sendphoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/koko12300/'..ght..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
@@ -13168,17 +13182,6 @@ keyboard.inline_keyboard = {
 } 
 local msg_id = msg.id_/2097152/0.5 
 https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&Photo=https://t.me/wffhvv/'..ght..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
-end
-if text == "لو خيروك بالصور" and not  database:get(bot_id.."sing:for:me"..msg.chat_id_) then 
-ght = math.random(28,56); 
-local Text ='تم اختيار المقطع لو خيروك لك' 
-keyboard = {}  
-keyboard.inline_keyboard = { 
-{{text = 'ghost.',url="t.me/G500t"}}, 
-{{text = 'Alamy.',url="t.me/j333x"}}, 
-} 
-local msg_id = msg.id_/2097152/0.5 
-https.request("https://api.telegram.org/bot"..token..'/sendphoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/koko12300/'..ght..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
 if text and text:match("^وضع لقب (.*)$") and msg.reply_to_message_id_ ~= 0 and Constructor(msg) then
 local timsh = text:match("^وضع لقب (.*)$")
